@@ -28,13 +28,13 @@
         </Grid.Background>
         <Border Height="310" VerticalAlignment="Top" CornerRadius="0 0 60 0" Background="#100E17" MouseDown="Border_MouseDown">
         </Border>
-        <wpf:PackIcon x:Name="network_icon" Kind="Network" Width="25" Height="25" Foreground="RED" Margin="5 5 0 0"/>
+        <wpf:PackIcon x:Name="network_icon" ToolTip="Kliknij dwa razy by ponowić połączenie z bazą danych." Kind="Network" Width="25" Height="25" Foreground="RED" Margin="5 5 0 0"/>
 
          <Image Source="../Images/Groups-Meeting-Light-icon.png" Width="128" Margin="0 0 0 250 "></Image>
                 
         <!--<TextBlock Text="Logowanie" Margin="20" Foreground="MidnightBlue" TextAlignment="Center" FontSize="38" FontFamily="Great Vibes"></TextBlock>-->
         <ProgressBar x:Name="ProgressBar" Width="400" Margin="0 150 0 0" Foreground="Chartreuse" IsIndeterminate="True"></ProgressBar>
-
+        <TextBlock x:Name="TextBlockWait" Text="Czekam na połączenie z bazą." Foreground="Gray" Margin="170 240 0 0"></TextBlock>
         <StackPanel Margin="0 0" Orientation="Horizontal" HorizontalAlignment="Center">
         
          
@@ -42,18 +42,18 @@
         <StackPanel Orientation="Horizontal" Margin="70 5">
             <!--<TextBlock Text="Login: "></TextBlock>-->
             <wpf:PackIcon Kind="User" Width="25" Height="25" Foreground="White"/>
-            <TextBox Text="admin" x:Name="txtUsername" Margin="10 0" wpf:HintAssist.Hint="" Background="Black" Foreground="White" Width="250" BorderBrush="#3d3d3d" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" ></TextBox> 
+            <TextBox Text="admin" x:Name="txtUsername" ToolTip="Wpisz nazwę użytkownika." Margin="10 0" wpf:HintAssist.Hint="" Background="Black" Foreground="White" Width="250" BorderBrush="#3d3d3d" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" ></TextBox> 
         </StackPanel>
             
             <StackPanel Orientation="Horizontal" Margin="70 5">
                <!-- <TextBlock Text="Hasło: "></TextBlock>-->
                 <wpf:PackIcon Kind="Lock" Width="25" Height="25" Foreground="White"/>
-                <PasswordBox Password="1234" x:Name="txtPassword" Margin="10 0" wpf:HintAssist.Hint="********"  Background="Black" Foreground="White" Width="250" BorderBrush="#3d3d3d" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" />
+                <PasswordBox Password="1234" x:Name="txtPassword" ToolTip="Wpisz hasło użytkownika." Margin="10 0" wpf:HintAssist.Hint="********"  Background="Black" Foreground="White" Width="250" BorderBrush="#3d3d3d" CaretBrush="#FFD94448" SelectionBrush="#FFD94448" />
 
             </StackPanel>
             
             <StackPanel >
-                <Button Width="100" Height="40" Margin="140 10"
+                <Button Width="100" Height="40" Margin="140 10" ToolTip="Kliknij by zalogować."
                                             x:Name="btnLogin" Click="btnLogin_Click" Background="{x:Null}">
                                        <wpf:PackIcon Kind="Login" Width="35" Height="35" Foreground="White"/>
                                     </Button>

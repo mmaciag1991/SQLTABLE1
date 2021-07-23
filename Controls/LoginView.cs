@@ -69,11 +69,13 @@ namespace SQLTABLE
         private void initializeConnection()
         {
             ProgressBar.Visibility = Visibility.Visible;
+            TextBlockWait.Visibility = Visibility.Visible;
 
             if ((SQL_Module.startConnection().State & ConnectionState.Open) != 0)
             {
                 network_icon.Foreground = new SolidColorBrush(Colors.Green);
                 ProgressBar.Visibility = Visibility.Hidden;
+                TextBlockWait.Visibility = Visibility.Hidden;
             }
             else
             {
