@@ -18,7 +18,7 @@ namespace SQLTABLE
              {
               if (Environment.MachineName.Equals("DESKTOP-A3AGJ6G"))
                  {
-                       con = new SqlConnection("Data Source=1DESKTOP-A3AGJ6G\\SQLEXPRESS01; Integrated Security=True; Initial Catalog=store;");
+                       con = new SqlConnection("Data Source=DESKTOP-A3AGJ6G\\SQLEXPRESS01; Integrated Security=True; Initial Catalog=store;");
                  }
                  else
                  {
