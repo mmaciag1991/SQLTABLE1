@@ -43,12 +43,12 @@
 
         <Button Width="80" Height="40" Margin="0 10 0 0"
                 x:Name="btnClose" Click="btnOK_Click" Background="{x:Null}">
-            <materialDesign:PackIcon Kind="CloseBox" Width="35" Height="35" Foreground="White"/>
+            <materialDesign:PackIcon Kind="Done" Width="35" Height="35" Foreground="White"/>
         </Button>
        
             </StackPanel>
         
-        <Image x:Name="Image_stat" Source="../Images/error-48268.png" Margin="210 0 0 140" Width="48"/>
+        <Image x:Name="Image_stat" Opacity="1" Source="../Images/error-48268.png" Margin="210 0 0 140" Width="48"/>
     </Grid>
     </materialDesign:Card>
 </Window>
