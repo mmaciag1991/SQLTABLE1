@@ -18,6 +18,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        WindowState="Maximized"
         
         >
     
@@ -51,8 +52,9 @@
        <!-- <Separator HorizontalAlignment="Left" Width="650" Background="AliceBlue"></Separator>-->
        
        <materialDesign:Card Padding="3" Margin="6">
-       <Grid>
-        
+           <StackPanel Orientation="Horizontal" Height="700">
+               <Grid Width="700">
+           
             <DataGrid Name="grdEmployee" AutoGenerateColumns="False" BorderBrush="#89000000">
           
                 <DataGrid.Columns>
@@ -69,6 +71,8 @@
 
             </DataGrid>
         </Grid>
+               
+           </StackPanel>
        </materialDesign:Card>
   
     </StackPanel>

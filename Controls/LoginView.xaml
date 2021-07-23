@@ -62,7 +62,7 @@
             
         </StackPanel>
             
-            <StackPanel Margin="-170 5 30 0">
+            <StackPanel Margin="-170 5 25 0">
                 <Button  Height="40" Width="70" ToolTip="Zamknij" x:Name="btnExit" Click="btnExit_Click" Background="{x:Null}">
                     <wpf:PackIcon Kind="Close" Foreground="White" Width="32" Height="32" />
                 </Button>
