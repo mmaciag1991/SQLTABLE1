@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{4784022A-D310-4EF7-8DC2-9FD3580D70D0}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>SQLTABLE</RootNamespace>
     <AssemblyName>SQLTABLE</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
@@ -77,7 +77,8 @@
       <DependentUpon>Message.xaml</DependentUpon>
     </Compile>
     <Compile Include="ENUM\MessageType.cs" />
-    <Compile Include="SQL_Module.cs" />
+    <Compile Include="Data\User.cs" />
+    <Compile Include="Utilities\SQL_Module.cs" />
     <Page Include="Controls\LoginView.xaml" />
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

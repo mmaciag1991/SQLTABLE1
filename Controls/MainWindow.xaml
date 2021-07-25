@@ -9,7 +9,7 @@
         
         
         mc:Ignorable="d"
-        Title="Użytkownicy" Height="350" Width="725" 
+        Title="Użytkownicy" Height="950" Width="725" 
         WindowStartupLocation="CenterScreen"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -23,7 +23,7 @@
         >
     
   
-    <StackPanel Orientation="Vertical">
+    <StackPanel x:Name="PanelMain" Orientation="Vertical">
         <StackPanel.Background>
             <LinearGradientBrush StartPoint="0.1,0" EndPoint="0.9,1">
                 <GradientStop Color="#2d333d" Offset="1" />
@@ -51,28 +51,40 @@
           </materialDesign:Card>
        <!-- <Separator HorizontalAlignment="Left" Width="650" Background="AliceBlue"></Separator>-->
        
-       <materialDesign:Card Padding="3" Margin="6">
-           <StackPanel Orientation="Horizontal" Height="700">
-               <Grid Width="700">
-           
-            <DataGrid Name="grdEmployee" AutoGenerateColumns="False" BorderBrush="#89000000">
+       <materialDesign:Card Padding="3" Margin="6" Height="1000">
+           <StackPanel Orientation="Horizontal" >
+               
+               <StackPanel Orientation="Vertical">
+                   
+                   <Grid Width="700">
+           <!--<ScrollViewer MaxHeight="900">-->
+            <DataGrid Name="grdEmployee" AutoGenerateColumns="False" BorderBrush="#89000000" MaxHeight="900">
           
                 <DataGrid.Columns>
 
                     <DataGridTextColumn Header="Id" Width="70" Binding="{Binding Id}"/>
 
-                    <DataGridTextColumn Header="Login" Width="150" Binding="{Binding UsrName}"/>
+                    <DataGridTextColumn Header="Login" Width="150" Binding="{Binding UserName}"/>
 
-                    <DataGridTextColumn Header="Pełna nazwa" Width="150" Binding="{Binding FullName}"/>
+                    <DataGridTextColumn Header="Hasło" Width="150" Binding="{Binding Password}"/>
 
-                    <DataGridTextColumn Header="Adres Email" Width="300" Binding="{Binding EmailAddress}"/>
+                    <DataGridTextColumn Header="Adres Email" Width="300" Binding="{Binding Adress}"/>
 
                 </DataGrid.Columns>
 
+                
             </DataGrid>
+           <!--</ScrollViewer>-->
         </Grid>
-               
-           </StackPanel>
+                   
+                <Button>
+                              <StackPanel Orientation="Horizontal">
+                                  <materialDesign:PackIcon Kind="ContentSave"></materialDesign:PackIcon>
+                                  <TextBlock Text="Zapisz" Margin="2 0 0 0"></TextBlock>
+                              </StackPanel>
+                          </Button>
+           </StackPanel>  
+               </StackPanel>
        </materialDesign:Card>
   
     </StackPanel>

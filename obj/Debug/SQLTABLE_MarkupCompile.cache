@@ -1,7 +1,7 @@
 ﻿SQLTABLE
 
 
-winexe
+exe
 C#
 .cs
 C:\Users\Mateusz\Desktop\SQLTABLE\SQLTABLE\SQLTABLE\obj\Debug\
@@ -12,9 +12,9 @@ DEBUG;TRACE
 C:\Users\Mateusz\Desktop\SQLTABLE\SQLTABLE\SQLTABLE\App.xaml
 38909029
 7-16440243
-8-1846845866
+91248480194
 141533340066
 Controls\LoginView.xaml;Controls\MainWindow.xaml;Controls\Message.xaml;
 
-False
+True
 
