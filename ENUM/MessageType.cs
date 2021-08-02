@@ -2,7 +2,7 @@ namespace SQLTABLE
 {
     public enum MessageType
     {
-        OK, 
+        Success, 
         Error,
         Information,
         Warning

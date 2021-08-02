@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using SQLTABLE.ObservableLists;
 
@@ -33,9 +38,19 @@ namespace SQLTABLE
 
             //SQL_Module.getUsersData().Fill(dt);
             
+            foreach (User user in _users)
+            {
+                if (user.UserName.Equals(""))
+                {
+
+                    _users.Remove(user);
+                }
+            }
             
  
             grdEmployee.ItemsSource = _users;
+            
+            
 
 
             _users.CollectionChanged += new System.Collections.Specialized.NotifyCollectionChangedEventHandler(collectionChangedMethod);
@@ -45,6 +60,8 @@ namespace SQLTABLE
             }
             
         }
+        
+      
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             
@@ -91,7 +108,41 @@ namespace SQLTABLE
                 }
             }
         }
-        
+
+        private void GrdEmployee_OnMouseDown(object sender, SelectionChangedEventArgs selectionChangedEventArgs)
+        {
+            User selectedUser = grdEmployee.SelectedItem as User;
+            Debug.Assert(selectedUser != null, nameof(selectedUser) + " != null");
+            Console.WriteLine(selectedUser.UserName);
+            idTextBlock.Text = selectedUser.Id+"";
+            loginTextBlock.Text = selectedUser.UserName;
+            emailTextBlock.Text = selectedUser.Adress;
+        }
+        void OnApllyClick(object sender, RoutedEventArgs e)
+        {
+            User selectedUser = grdEmployee.SelectedItem as User;
+            Debug.Assert(selectedUser != null, nameof(selectedUser) + " != null");
+            Console.WriteLine(selectedUser.Id);
+            foreach (var user in _users)
+            {
+                if (user.Id == selectedUser.Id)
+                {
+                    user.UserName = loginTextBlock.Text;
+                    user.Adress = emailTextBlock.Text;
+                    grdEmployee.Items.Refresh();
+                }
+            }
+        }
+
+        void OnUpdateUsers(object sender, RoutedEventArgs e)
+        {
+            SQL_Module.updateUser(_users);
+            Message message = new Message();
+            message.ownerWindow(this);
+            message.showMessage("Dane użytkowników zostały zaktualizowane.",MessageType.Success);
+            message.Topmost = true;
+        }
+
     }
     
     

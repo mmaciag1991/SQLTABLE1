@@ -39,7 +39,7 @@ namespace SQLTABLE
                // MessageBox.Show("Zalogowano pomyślnie", "Sukces", MessageBoxButton.OK, MessageBoxImage.Information);
 
                
-               message.showMessage("Zalogowano pomyślnie",MessageType.OK);
+               message.showMessage("Zalogowano pomyślnie",MessageType.Success);
                
                message.Topmost = true;
                MainWindow mainWindow = new MainWindow();

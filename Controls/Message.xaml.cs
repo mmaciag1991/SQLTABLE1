@@ -11,7 +11,7 @@ namespace SQLTABLE
     {
         public bool isWindowActive = true;
         private MainWindow mainWindow;
-        private MessageType _messageType = MessageType.OK;
+        private MessageType _messageType = MessageType.Success;
         
         public Message()
         {
@@ -20,7 +20,7 @@ namespace SQLTABLE
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            if (_messageType == MessageType.OK)
+            if (_messageType == MessageType.Success)
             {
                 mainWindow.Show();
             }
@@ -34,12 +34,20 @@ namespace SQLTABLE
             _messageType = messageType;
             switch (messageType)
             {
-                case MessageType.OK:
+                case MessageType.Success:
                     txbType.Text = "Sukces";
                    Image_stat.Source = new BitmapImage(new Uri(@"pack://application:,,,/../Images/success-icon-23192.png"));
                     break;
                 case MessageType.Error:
                     txbType.Text = "Błąd";
+                    Image_stat.Source = new BitmapImage(new Uri(@"pack://application:,,,/../Images/error-48268.png"));
+                    break;
+                case MessageType.Information:
+                    txbType.Text = "Informacja";
+                    Image_stat.Source = new BitmapImage(new Uri(@"pack://application:,,,/../Images/error-48268.png"));
+                    break;
+                case MessageType.Warning:
+                    txbType.Text = "Ostrzeżenie";
                     Image_stat.Source = new BitmapImage(new Uri(@"pack://application:,,,/../Images/error-48268.png"));
                     break;
             }

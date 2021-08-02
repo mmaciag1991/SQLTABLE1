@@ -3,6 +3,7 @@ using System.Collections.ObjectModel;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
 using SQLTABLE.ObservableLists;
 
 namespace SQLTABLE
@@ -136,8 +137,11 @@ namespace SQLTABLE
                     string name = reader.GetString(1);
                     string password = reader.GetString(2);
                     string adress = reader.GetString(3);
-                    
-                    users.Add(new User(id, name, password, adress));
+                    if (id != null)
+                    {
+                          users.Add(new User(id, name, password, adress));
+                    }
+                  
                 }
                  con.Close();
              }
@@ -148,6 +152,28 @@ namespace SQLTABLE
              }
             
              return users;
+         }
+
+         static public void updateUser(ObservableCollection<User> users)
+         {
+           
+             con.Open();
+             foreach (var user in users)
+             {
+                 
+                 String st = "UPDATE Urser SET UsrName='" + user.UserName + "', EmailAddress='" + user.Adress + "' WHERE Id='" + user.Id + "';";
+                 
+                              SqlCommand sqlcom = new SqlCommand(st, con);
+                              try
+                              {
+                                  sqlcom.ExecuteNonQuery();
+                              }
+                              catch (SqlException ex)
+                              {
+                                  MessageBox.Show(ex.Message);
+                              }
+             }
+             con.Close();
          }
     }
 
